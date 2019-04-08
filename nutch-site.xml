@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+<property>
+<name>http.agent.name</name>
+<value>nutch-solr-integration</value>
+</property>
+<property>
+<name>generate.max.per.host</name>
+<value>100</value>
+</property>
+<property>
+ <name>plugin.includes</name>
+  <value>protocol-httpclient|urlfilter-regex|index-(basic|more)|query-(basic|site|url|lang)|
+			indexer-solr|nutch-extensionpoints|protocol-httpclient|urlfilter-regex
+			|parse-(text|html|msexcel|msword|mspowerpoint|pdf)|
+			summary-basic|scoring-opic|urlnormalizer-(pass|regex|basic)protocol-http|
+			urlfilter-regex|parse-(html|tika|metatags)
+			|index-(basic|anchor|more|metadata)</value>
+  </property>
+	<name>http.accept</name>
+	<value>application/octet-stream</value>
+	<description>Value of the "Accept" request header field. A space character
+	as value will cause that no "Accept" header field is sent in the request.
+	</description>
+  </property>
+<property>
+	<name>fetcher.maxNum.threads</name>
+	<value>50</value>  
+	<description>Max number of fetch threads allowed when using fetcher.bandwidth.target. 
+	Defaults to fetcher.threads.fetch if unspecified or
+	set to a value lower than it. </description>
+  </property>
+<property>
+  <name>db.ignore.external.links</name>
+  <value>true</value>
+  <description>If true, outlinks leading from a page to external hosts or domain
+  will be ignored. This is an effective way to limit the crawl to include
+  only initially injected hosts or domains, without creating complex URLFilters.
+  See 'db.ignore.external.links.mode'.
+  </description>
+</property>
+<property>
+ <name>db.ignore.external.links.mode</name>
+ <value>byHost</value>
+</property>
+<property>
+  <name>db.max.outlinks.per.page</name>
+  <value>20000</value>
+  <description>The maximum number of outlinks that we'll process for a page.
+  If this value is nonnegative (>=0), at most db.max.outlinks.per.page outlinks
+  will be processed for a page; otherwise, all outlinks will be processed.
+  </description>
+</property>
+<property>
+  <name>db.ignore.internal.links</name>
+  <value>false</value>
+  <description>If true, outlinks leading from a page to internal hosts or domain
+  will be ignored. This is an effective way to limit the crawl to include
+  only initially injected hosts or domains, without creating complex URLFilters.
+  See 'db.ignore.external.links.mode'.
+  </description>
+</property>
+<property>
+  <name>generate.max.count</name>
+  <value>1000</value>
+</property>
+<property>
+  <name>fetcher.server.delay</name>
+  <value>0.5</value>
+ <description>The number of seconds the fetcher will delay between 
+   successive requests to the same server. Note that this might get
+   overriden by a Crawl-Delay from a robots.txt and is used ONLY if 
+   fetcher.threads.per.queue is set to 1.
+ </description>
+
+</property>
+<property>
+  <name>fetcher.threads.fetch</name>
+  <value>400</value>
+  <description>The number of FetcherThreads the fetcher should use.
+    This is also determines the maximum number of requests that are
+    made at once (each FetcherThread handles one connection).</description>
+</property>
+<property>
+  <name>fetcher.threads.per.host</name>
+  <value>25</value>
+  <description>This number is the maximum number of threads that
+    should be allowed to access a host at one time.</description>
+</property>
+<property>
+  <name>http.content.limit</name>
+  <value>6553600</value>
+  <description>The length limit for downloaded content using the http://
+  protocol, in bytes. If this value is nonnegative (>=0), content longer
+  than it will be truncated; otherwise, no truncation at all. Do not
+  confuse this setting with the file.content.limit setting.
+  </description>
+</property>
+</configuration>
