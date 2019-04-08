@@ -1,0 +1,2 @@
+# Apache_nutch
+Apache Nutch is an extensible and scalable web crawler based on Hadoop. We can find Web page hyperlinks in an automated manner, reduce lots of maintenance work, for example checking broken links, and create a copy of all the visited pages for searching over. This document explains how to use Nutch with Apache Solr. Solr is an open source full text search framework, with Solr we can search pages acquired by Nutch. Apache Nutch supports Solr out-the-box, simplifying Nutch-Solr integration. 
