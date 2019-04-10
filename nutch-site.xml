@@ -14,13 +14,9 @@
 </property>
 <property>
  <name>plugin.includes</name>
-  <value>protocol-httpclient|urlfilter-regex|index-(basic|more)|query-(basic|site|url|lang)|
-			indexer-solr|nutch-extensionpoints|protocol-httpclient|urlfilter-regex
-			|parse-(text|html|msexcel|msword|mspowerpoint|pdf)|
-			summary-basic|scoring-opic|urlnormalizer-(pass|regex|basic)protocol-http|
-			urlfilter-regex|parse-(html|tika|metatags)
-			|index-(basic|anchor|more|metadata)</value>
+  <value>protocol-httpclient|urlfilter-regex|index-(basic|more)|query-(basic|site|url|lang)|indexer-solr|nutch-extensionpoints|protocol-httpclient|urlfilter-regex|parse-(text|html|msexcel|msword|mspowerpoint|pdf)|summary-basic|scoring-opic|urlnormalizer-(pass|regex|basic)protocol-http|urlfilter-regex|parse-(html|tika|metatags)|index-(basic|anchor|more|metadata)</value>
   </property>
+  <property>
 	<name>http.accept</name>
 	<value>application/octet-stream</value>
 	<description>Value of the "Accept" request header field. A space character
@@ -36,7 +32,7 @@
   </property>
 <property>
   <name>db.ignore.external.links</name>
-  <value>true</value>
+  <value>false</value>
   <description>If true, outlinks leading from a page to external hosts or domain
   will be ignored. This is an effective way to limit the crawl to include
   only initially injected hosts or domains, without creating complex URLFilters.
@@ -93,7 +89,7 @@
 </property>
 <property>
   <name>http.content.limit</name>
-  <value>6553600</value>
+  <value>65536000</value>
   <description>The length limit for downloaded content using the http://
   protocol, in bytes. If this value is nonnegative (>=0), content longer
   than it will be truncated; otherwise, no truncation at all. Do not
